@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #198754;
+    --primary-color-light: #d6f5d6;
+    --secondary-color: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding-top: 2px; /* Set top padding to 2 */
+    padding-bottom: 2px; /* Set bottom padding to 2 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+.navbar .nav-link.login, .navbar .nav-link.register {
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+.navbar-nav {
+    flex: 1;
+    justify-content: center;
+}
+.navbar-brand {
+    flex: 1;
+    justify-content: center;
+}
+.navbar-brand img {
+    width: 4rem;
+}
+.navbar-nav.ms-auto {
+    justify-content: flex-end;
+    gap: 10px;
+    margin-left: auto; /* Align to the far right */
+}
+.navbar-nav .nav-link.active {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.navbar .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    position: relative; /* Add position relative to the container */
+    color: var(--primary-color);
+}
+.navbar .search-bar input {
+    width: 100%;
+    max-width: 250px;
+    padding: 5px 35px 5px 10px; /* Adjust padding for search icon */
+    border: 1px solid #000000; /* Change border color to black */
+    border-radius: 5px 0 0 5px; /* Adjust border-radius */
+}
+.navbar .search-bar .search-icon {
+    position: absolute;
+    right: 50px; /* Adjust position */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    z-index: 1; /* Ensure the icon is above the input */
+}
+.navbar .search-bar button {
+    border: 1px solid #000000;
+    border-radius: 0 5px 5px 0; /* Adjust border-radius */
+    background-color: var(--primary-color);
+    color: var(--secondary-color); /* Fix typo */
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .search-bar button i {
+    color: var(--secondary-color); /* Ensure icon color is correct */
+}
+.navbar .search-bar button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px; /* Add border-radius */
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    border-radius: 5px; /* Add border-radius */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 5px; /* Add border-radius */
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link:focus::before {
+    transform: scaleX(1);
+    border-radius: 5px; /* Add border-radius */
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link:focus::before {
+    opacity: 1;
+}
+
+#hero {
+    background-color: var(--primary-color-light);
+    color: var(--secondary-color);
+    padding: 100px 0;
+}
+
+#heroCarousel .carousel-item img {
+    border-radius: 10px; /* Add border-radius */
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 20px; /* Ensure margin is 20px on both sides */
+}
+
+.container {
+    margin: 0 20px; /* Set left and right margin to 20px, top and bottom to 0 */
+}
+
+.navbar .navbar-toggler {
+    border: none;
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
