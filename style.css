@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #198754;
-    --primary-color-light: #d6f5d6;
+    --primary-color-light: #f5fff2;
     --secondary-color: #ffffff;
     --font-family: 'Poppins', sans-serif;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .navbar-nav {
-    flex: 1;
+    /* flex: 1; */
     justify-content: center;
 }
 
@@ -40,6 +40,7 @@ body {
     position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 5px;
+    color: var(--secondary-color); /* Set text color to white */
 }
 
 .navbar-nav .nav-link:hover,
@@ -61,8 +62,8 @@ body {
 .navbar .search-bar {
     flex: 1;
     display: flex;
-    justify-content: center;
-    margin: 0 10px;
+    /* justify-content: center; */
+    /* margin: 0 10px; */
     position: relative;
     color: var(--primary-color);
 }
@@ -133,6 +134,49 @@ body {
     border-radius: 10px;
 }
 
-.container {
-    margin: 0 20px;
+.nav-item-link {
+    margin-left: 13rem;
+}
+
+#products {
+    background-color: var(--primary-color-light); /* Match hero section background color */
+}
+
+#products .card {
+    width: 100%;
+    max-width: 200px; /* Adjust card width */
+    margin: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Increase the translateY value for a more noticeable effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards; /* Increase the duration for a more noticeable effect */
+}
+
+.card {
+    animation-delay: calc(var(--card-index) * 0.2s); /* Use CSS variable for animation delay */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: var(--primary-color-light);
+}
+
+@media (max-width: 1025px) {
+    .nav-item-link {
+        margin-left: 0;
+    }
 }
