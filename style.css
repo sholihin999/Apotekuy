@@ -1,18 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* Deklarasi variabel CSS untuk warna dan font */
 :root {
     --primary-color: #198754;
     --primary-color-light: #f5fff2;
     --secondary-color: #ffffff;
     --font-family: 'Poppins', sans-serif;
+    --black-color: #000000;
+    --dark-green: #14532d;
+    --darker-green: #0f3d21;
+    --light-grey: #e6f6ec;
+    --light-green: #e9f5e9;
+    --white-grey: #f0f0f0;
+    --green-border: #28a745;
 }
 
+/* Gaya umum untuk body */
 body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
 }
 
+/* Gaya untuk navbar */
 .navbar {
     background-color: var(--primary-color) !important;
     padding: 2px 0;
@@ -53,6 +63,7 @@ body {
     padding: 5px 10px;
 }
 
+/* Gaya untuk search bar di navbar */
 .navbar .search-bar {
     flex: 1;
     display: flex;
@@ -64,7 +75,7 @@ body {
     width: 100%;
     max-width: 250px;
     padding: 5px 35px 5px 10px;
-    border: 1px solid #000000;
+    border: 1px solid var(--black-color);
     border-radius: 5px 0 0 5px;
 }
 
@@ -78,7 +89,7 @@ body {
 }
 
 .navbar .search-bar button {
-    border: 1px solid #000000;
+    border: 1px solid var(--black-color);
     border-radius: 0 5px 5px 0;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -109,6 +120,7 @@ body {
     margin-left: auto;
 }
 
+/* Gaya untuk ikon media sosial */
 .social-icons a {
     color: var(--secondary-color); /* Contrast color */
     font-size: 1.5rem;
@@ -120,10 +132,11 @@ body {
 
 .social-icons a:hover {
     color: var(--primary-color); /* Change to primary color on hover */
-    background-color: #f0f0f0; /* White-grey background on hover */
+    background-color: var(--white-grey); /* White-grey background on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
+/* Gaya untuk bagian hero */
 #hero {
     background-color: var(--primary-color-light);
     color: var(--secondary-color);
@@ -145,17 +158,25 @@ body {
     margin-left: 13rem;
 }
 
+/* Gaya untuk bagian produk */
 #products {
     background-color: var(--primary-color-light);
 }
 
+#products .row {
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap to the next line */
+    justify-content: flex-start; /* Align cards to the start of the row */
+}
+
 #products .card {
-    width: 100%;
-    max-width: 300px; /* Increase max-width */
-    margin: auto;
+    flex: 1 1 calc(16.66% - 20px); /* Adjust width to fit 6 cards per row with some margin */
+    margin: 10px; /* Add margin between cards */
+    max-width: 300px; /* Ensure max-width is consistent */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/* Animasi fadeInUp */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -167,7 +188,7 @@ body {
     }
 }
 
-/* Animasi hover */
+/* Gaya hover untuk kartu produk */
 .card {
     display: flex;
     transition: transform 0.3s, box-shadow 0.3s; /* Tambahkan transisi untuk animasi */
@@ -178,15 +199,16 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
 }
 
-/* Efek pembeda saat diklik */
+/* Efek saat kartu diklik */
 .card.clicked {
-    border: 2px solid #28a745; /* Warna hijau sesuai tema button */
+    border: 2px solid var(--green-border); /* Warna hijau sesuai tema button */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan lebih besar */
     /* transform: translateY(-15px); Lebih naik ke atas */
 }
 
 #profile img {
     transition: transform 0.3s ease-in-out;
+    margin-right: 5px; /* Add this line */
 }
 
 #profile img:hover {
@@ -197,11 +219,13 @@ body {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
+/* Gaya untuk form pemesanan */
 #order form {
     max-width: 600px;
     margin: auto;
 }
 
+/* Gaya untuk footer */
 footer p, footer h6 {
     font-size: 0.875rem; /* Smaller font size */
 }
@@ -230,11 +254,12 @@ footer h4 {
     text-align: center;
 }
 
+/* Gaya untuk bagian FAQ */
 .faq-question {
     cursor: pointer;
     font-weight: bold;
     padding: 10px;
-    background-color: #14532d; /* Darker green for contrast */
+    background-color: var(--dark-green); /* Darker green for contrast */
     color: var(--secondary-color);
     border-radius: 5px;
     margin-bottom: 5px;
@@ -245,7 +270,7 @@ footer h4 {
 }
 
 .faq-question:hover {
-    background-color: #0f3d21; /* Even darker green on hover */
+    background-color: var(--darker-green); /* Even darker green on hover */
 }
 
 .dropdown-icon {
@@ -267,7 +292,7 @@ footer h4 {
 }
 
 .faq-section {
-    background-color: #e6f6ec; /* Light grey background */
+    background-color: var(--light-grey); /* Light grey background */
     padding: 20px;
     border-radius: 10px;
 }
@@ -275,7 +300,7 @@ footer h4 {
 .faq-answer {
     display: none;
     padding: 10px;
-    background-color: #e9f5e9; /* Light green for contrast */
+    background-color: var(--light-green); /* Light green for contrast */
     color: #0f3d21;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -285,12 +310,21 @@ footer h4 {
     display: block;
 }
 
+/* Gaya untuk bagian profil pengembang */
+#developer-profile {
+    padding-top: 100px; /* Add this line */
+}
+
+
 @media (max-width: 1200px) {
     .navbar-content {
         margin: 0 10px;
     }
     .nav-item-link {
         margin-left: 5rem;
+    }
+    #products .card {
+        flex: 1 1 calc(25% - 20px); /* Adjust width to fit 4 cards per row */
     }
 }
 
@@ -305,6 +339,13 @@ footer h4 {
     .search-bar {
         width: 100%;
         margin-top: 10px;
+    }
+    #products .card {
+        flex: 1 1 calc(33.33% - 20px); /* Adjust width to fit 3 cards per row */
+    }
+    #developer-profile {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 
@@ -326,7 +367,11 @@ footer h4 {
         font-size: 1rem;
     }
     #products .card {
-        max-width: 250px; /* Adjust max-width for smaller screens */
+        flex: 1 1 calc(50% - 20px); /* Adjust width to fit 2 cards per row */
+    }
+    #developer-profile {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 
@@ -348,6 +393,13 @@ footer h4 {
         font-size: 0.9rem;
     }
     #products .card {
-        max-width: 200px; /* Adjust max-width for smaller screens */
+        flex: 1 1 100%; /* Adjust width to fit 1 card per row */
+    }
+    #developer-profile {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #developer-profile .row {
+        gap: 20px; /* Add spacing between image and text */
     }
 }
