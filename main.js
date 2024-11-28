@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Mendapatkan elemen-elemen yang diperlukan
     const productsSection = document.getElementById('products');
     const cards = document.querySelectorAll('#products .card');
     const orderSection = document.getElementById('order');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitButton = orderForm.querySelector('button[type="submit"]');
     const homeSection = document.getElementById('home');
 
+    // Fungsi untuk memeriksa apakah elemen berada di dalam viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
         return (
@@ -17,28 +19,39 @@ document.addEventListener('DOMContentLoaded', function () {
         );
     }
 
+    // Fungsi untuk memeriksa visibilitas elemen
     function checkVisibility() {
         if (isInViewport(productsSection)) {
             cards.forEach((card, index) => {
-                card.style.setProperty('--card-index', index); // Set CSS variable for animation delay
+                card.style.setProperty('--card-index', index); // Mengatur variabel CSS untuk delay animasi
                 card.classList.add('fadeInUp');
             });
             window.removeEventListener('scroll', checkVisibility);
         }
     }
 
+    // Menambahkan event listener untuk tombol order
     orderButtons.forEach(button => {
         button.addEventListener('click', function () {
             orderSection.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
+    // Menambahkan event listener untuk tombol submit pada form order
     submitButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent form submission for demonstration
-        homeSection.scrollIntoView({ behavior: 'smooth' });
+        event.preventDefault(); // Mencegah pengiriman form untuk demonstrasi
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // FAQ toggle functionality
+    // Menambahkan event listener untuk tombol submit pada form konsultasi
+    const consultationForm = document.querySelector('#consultation form');
+    const consultationButton = consultationForm.querySelector('button[type="submit"]');
+    consultationButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Mencegah pengiriman form untuk demonstrasi
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Fungsi toggle untuk FAQ
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
@@ -47,6 +60,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Fungsi untuk modal
+    const loginLink = document.querySelector('.nav-link.login');
+    const registerLink = document.querySelector('.nav-link.register');
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const closeButtons = document.querySelectorAll('.close');
+
+    loginLink.addEventListener('click', function () {
+        loginModal.style.display = 'block';
+    });
+
+    registerLink.addEventListener('click', function () {
+        registerModal.style.display = 'block';
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == loginModal) {
+            loginModal.style.display = 'none';
+        }
+        if (event.target == registerModal) {
+            registerModal.style.display = 'none';
+        }
+    });
+
+    // Menambahkan event listener untuk scroll
     window.addEventListener('scroll', checkVisibility);
     checkVisibility();
 });
@@ -65,7 +110,7 @@ cards.forEach(card => {
     });
 });
 
-
+// Inisialisasi AOS (Animate On Scroll)
 AOS.init({
     duration: 800, // Durasi animasi dalam milidetik
     once: true,    // Animasi terjadi sekali saja
