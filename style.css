@@ -15,14 +15,14 @@
     --green-border: #28a745;
 }
 
-/* Gaya umum untuk body */
+/*umum untuk body */
 body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
 }
 
-/* Gaya untuk navbar */
+/*untuk navbar */
 .navbar {
     background-color: var(--primary-color) !important;
     padding: 2px 0;
@@ -67,7 +67,7 @@ body {
     padding: 5px 10px;
 }
 
-/* Gaya untuk search bar di navbar */
+/*untuk search bar di navbar */
 .navbar .search-bar {
     flex: 1;
     display: flex;
@@ -222,13 +222,13 @@ body {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Gaya untuk form pemesanan */
+/*untuk form pemesanan */
 #order form {
     max-width: 600px;
     margin: auto;
 }
 
-/* Gaya untuk footer */
+/*untuk footer */
 footer p, footer h6 {
     font-size: 0.875rem; 
 }
@@ -257,7 +257,7 @@ footer h4 {
     text-align: center;
 }
 
-/* Gaya untuk bagian FAQ */
+/*untuk bagian FAQ */
 .faq-question {
     cursor: pointer;
     font-weight: bold;
@@ -354,7 +354,7 @@ footer h4 {
     cursor: pointer;
 }
 
-/* Gaya responsif untuk berbagai ukuran layar */
+/*responsif untuk berbagai ukuran layar */
 @media (max-width: 1200px) {
     .navbar-content {
         margin: 0 10px;
@@ -447,7 +447,7 @@ footer h4 {
         padding-bottom: 20px;
     }
     #developer-profile .row {
-        gap: 20px; /* Tambahkan jarak antara gambar dan teks */
+        gap: 20px; 
     }
     .pargarafdiri p {
         font-size: 0.75rem;
