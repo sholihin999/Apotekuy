@@ -461,3 +461,14 @@ footer h4 {
     line-height: 1.5;
     margin: 20px 0;
 }
+
+#developer-profile {
+    overflow: hidden;
+}
+
+#consultation {
+    overflow: hidden;
+}
+#profile {
+    overflow: hidden;
+}
