@@ -1,2 +1,2 @@
-<h1>Ini merupakan landing page Apotik yang bernama Apotekuy Pharmacy
-</h1>
+<h2>Ini merupakan landing page Apotik yang bernama Apotekuy Pharmacy
+</h2>
