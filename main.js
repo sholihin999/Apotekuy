@@ -33,8 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Menambahkan event listener untuk tombol order
     orderButtons.forEach(button => {
         button.addEventListener('click', function () {
-            orderSection.scrollIntoView({ behavior: 'smooth' });
+            const card = button.closest('.card');
+            const productName = card.querySelector('.card-title').textContent;
+            const productImage = card.querySelector('.card-img-top').src;
+
+            document.getElementById('orderProductName').value = productName;
+            document.getElementById('orderProductImage').src = productImage;
+
+            document.getElementById('orderModal').style.display = 'block';
         });
+    });
+
+    // Menambahkan event listener untuk tombol close pada modal
+    document.querySelector('#orderModal .close').addEventListener('click', function () {
+        document.getElementById('orderModal').style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == document.getElementById('orderModal')) {
+            document.getElementById('orderModal').style.display = 'none';
+        }
     });
 
     // Menambahkan event listener untuk tombol submit pada form order

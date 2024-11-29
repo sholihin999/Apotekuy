@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Link navigasi -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item ps-4"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item ps-4"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item ps-4"><a class="nav-link" href="#profile">About</a></li>
                     <li class="nav-item ps-4"><a class="nav-link" href="#products">Produk</a></li>
                     <li class="nav-item ps-4"><a class="nav-link" href="#developer-profile">Pengembang</a></li>
@@ -53,10 +53,10 @@
                 <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
                     <h1>Selamat Datang <br> di Apotekuy Pharmacy</h1>
                     <br>
-                    <p>Apotik yang menyediakan obat-obatan asli dan terpercaya.
-                        <br> 🩺 Sahabat Sehat Anda!
-                        <br> 💡 Kesehatan Anda, Prioritas Kami.
-                        <br> 🌱 Hidup sehat dimulai dari pilihan yang tepat!
+                    <p>Apotekuy Pharmacy: Solusi Kesehatan Terbaik untuk Anda.
+                        <br> 🩺 Kami Menyediakan Obat Berkualitas dan Terpercaya.
+                        <br> 💡 Kesehatan Anda, Kebahagiaan Kami.
+                        <br> 🌱 Pilih Hidup Sehat Bersama Apotekuy!
                     </p>
                 </div>
                 <!-- Carousel gambar promosi -->
@@ -442,21 +442,20 @@
             <div class="row align-items-center">
                 <!-- Gambar -->
                 <div class="col-md-6 text-center" data-aos="fade-right" data-aos-delay="800">
-                    <img src="/img/solihin.jpg" class="img-fluid rounded" alt="image profil pengmbang" style="max-width: 200px;">
+                    <img src="/img/solihin.svg" alt="image profil pengmbang" style="max-width: 200px;">
                 </div>
                 <!-- Teks -->
                 <div class="col-md-6" data-aos="fade-left" data-aos-delay="900">
                     <div style="text-align: justify;">
-                        <ul class="list-unstyled">
-                            <li><strong>Nama :</strong> Muhammad Solihin</li>
-                            <li><strong>Tanggal Lahir :</strong> 09 Oktober 2005</li>
-                            <li><strong>Alamat :</strong> Kp. Batu Kembar Rt04 Rw 05, Ciderum, Caringin, Bogor, Jawa Barat</li>
-                            <li><strong>Pendidikan Saat Ini :</strong> Sekolah Tinggi Teknologi Terpadu Nurul Fikri</li>
-                            <li><strong>No HP :</strong><a href="https://wa.me/6285772164876" target="_blank" style="text-decoration: none; color: inherit;"> 085772164876</a></li>
-                            <li><strong>Email :</strong><a href="mailto:muhamadsolihin0857@gmail.com" style="text-decoration: none; color: inherit;"> muhamadsolihin0857@gmail.com</a></li>
-                            <li><strong>Media Sosial :</strong><a href="https://www.instagram.com/slhn.99/" target="_blank" style="text-decoration: none; color: inherit;"> slhn.99</a></li>
-                            <li><strong>LinkedIn :</strong><a href="https://www.linkedin.com/in/muhamad-solihin-9933as56/" target="_blank" style="text-decoration: none; color: inherit;"> Muhamad Solihin</a></li>
-                        </ul>
+                        <p>Hai, nama saya Muhammad Solihin, saya merupakan seorang developer pemula yang saat ini masih menjalani studi saya di STT Terpadu Nurul Fikri jurusan Teknik Informatika. Saya tertarik dengan dunia pemrograman dan ingin terus belajar untuk menjadi seorang developer yang handal.</p>
+                        <p>Saya siap untuk berkolabroasi dengan Anda dalam mengembangkan web yang bermanfaat dan inovatif. Jika Anda tertarik untuk berkolaborasi, jangan ragu untuk menghubungi saya melalui email atau media sosial yang tertera di bawah ini.</p>
+                        <!-- Tambahkan bagian media sosial -->
+                        <div class="social-icons">
+                            <a href="mailto:muhamadsolihin0857@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/slhn.99/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/+6285772164876"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.linkedin.com/in/muhamad-solihin-9933as56/"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -501,6 +500,57 @@
                     <input type="password" class="form-control" id="registerConfirmPassword" required>
                 </div>
                 <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Form Pemesanan</h2>
+            <form>
+                <div class="product-info">
+                    <img id="orderProductImage" class="img-fluid" alt="Product Image">
+                    <div class="product-details">
+                        <div class="mb-3">
+                            <label for="orderProductName" class="form-label">Nama Produk</label>
+                            <input type="text" class="form-control" id="orderProductName" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="orderProductQuantity" class="form-label">Jumlah Produk</label>
+                            <input type="number" class="form-control" id="orderProductQuantity" min="1" value="1" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="orderName" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="orderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone" class="form-label">Nomor Telepon</label>
+                        <input type="tel" class="form-control" id="orderPhone" required>
+                    </div>
+                    <div class="form-group address">
+                        <label for="orderAddress" class="form-label">Alamat</label>
+                        <textarea class="form-control" id="orderAddress" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="orderPaymentMethod" class="form-label">Metode Pembayaran</label>
+                        <select class="form-select" id="orderPaymentMethod" required>
+                            <option value="">Pilih Bank</option>
+                            <option value="bca">BCA</option>
+                            <option value="bni">BNI</option>
+                            <option value="bri">BRI</option>
+                            <option value="mandiri">Mandiri</option>
+                            <option value="cimb">CIMB Niaga</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn btn-success w-100">Pesan</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
