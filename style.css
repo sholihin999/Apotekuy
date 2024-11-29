@@ -140,6 +140,19 @@ body {
     transform: scale(1.2); 
 }
 
+/* ...existing code... */
+.contrast-icons a {
+    color: #ffffff; /* White color for contrast */
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.contrast-icons a:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
+/* ...existing code... */
+
 /*untuk bagian hero */
 #hero {
     background-color: var(--primary-color-light);
